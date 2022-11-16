@@ -1,0 +1,16 @@
+# action.yml
+name: 'Run Validator W3C'
+description: 'Run Test Validator W3C'
+inputs:
+  run-validator-w3c:  # id of input
+    description: 'Run Validator W3C'
+    required: true
+    default: 'Noscript'
+outputs:
+  result-validator-w3c: # id of output
+    description: 'Result execute validator-w3c'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.run-validator-w3c }}
