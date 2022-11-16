@@ -1,6 +1,5 @@
 #!/bin/sh -l
 
-
 function jsonValue() {
 KEY=$1
 num=$2
