@@ -1,7 +1,7 @@
 [![Test Validation Action](https://github.com/PapouMarc/action-validator-w3c/actions/workflows/dockerimage.yml/badge.svg)](https://github.com/PapouMarc/action-validator-w3c/actions/workflows/dockerimage.yml)
 
 
-# docker validator w3c action
+# docker validator w3c for file html/w3c
 
 you can run a test validator w3c on the file
 
