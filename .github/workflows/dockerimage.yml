@@ -1,0 +1,29 @@
+name: Test Validation Action
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths-ignore:
+      - '.github/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: run custom docker testLog
+      id: testAction1
+      uses: ./
+      with:
+        result-validator-w3c: './test/good_test.html'
+    - name: Get the output result
+      run: echo -e "The result is ${{ steps.testAction1.outputs.result-validator-w3c }}"
+    - name: run custom docker testLog
+      id: testAction2
+      uses: ./
+      with:
+        result-validator-w3c: './test/bad_test.html'
+    - name: Get the output result
+      run: echo -e "The result is ${{ steps.testAction2.outputs.result-validator-w3c }}"
