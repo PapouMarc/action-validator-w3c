@@ -1,4 +1,4 @@
-![](https://github.com/PapouMarc/action-validator-w3c/workflows/Test%20Validation%20Action/badge.svg)
+[![Test Validation Action](https://github.com/PapouMarc/action-validator-w3c/actions/workflows/dockerimage.yml/badge.svg)](https://github.com/PapouMarc/action-validator-w3c/actions/workflows/dockerimage.yml)
 
 
 # docker validator w3c action
