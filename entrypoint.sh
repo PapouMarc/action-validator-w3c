@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 
 function jsonValue() {
 KEY=$1
