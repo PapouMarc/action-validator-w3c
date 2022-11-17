@@ -18,7 +18,7 @@ echo "########### START ${1} ###########\n${_result}\n########### END ${1} #####
 
 if [ -e "${1}" ]; then
   if [ -d "${1}" ]; then
-    for n in `ls -1 ${1}`; do
+    for n in `ls -p1 ${1} | grep -v /`; do
       result="${result}\n"`trapapi ${1}/$n`
     done
   else
