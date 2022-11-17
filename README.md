@@ -19,6 +19,17 @@ return result.
 
 ## Example usage
 
+### For 1 file
+
+```
 uses: actions/action-validator-w3c@v1
 with:
   run-validator-w3c: './test/bad_test.html'
+```
+### For 1 directory
+
+```
+uses: actions/action-validator-w3c@v1
+with:
+  run-validator-w3c: './test'
+```
