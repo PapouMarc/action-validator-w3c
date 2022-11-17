@@ -34,12 +34,12 @@ with:
   run-validator-w3c: './test'
 ```
 
-## Changes Notes
+# Changes Notes
 
-# V1
+## V1
 
 Init projet only 1 file
 
-# V2
+## V2
 
 Scan directory
