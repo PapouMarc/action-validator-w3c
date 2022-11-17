@@ -10,7 +10,7 @@ function trapapi() {
 
 curl -H "Content-Type: text/html; charset=utf-8" --data-binary @${1} https://validator.w3.org/nu/?out=json -o $$.json > /dev/null 2>&1
 
-echo -e "########### START ${1} ###########\n"`cat $$.json | jsonValue message`"\n########### END ${1} ###########\n"
+echo "########### START ${1} ###########\n"`cat $$.json | jsonValue message`"\n########### END ${1} ###########\n"
 
 
 }
