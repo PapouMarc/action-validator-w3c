@@ -33,3 +33,13 @@ uses: actions/action-validator-w3c@v1
 with:
   run-validator-w3c: './test'
 ```
+
+## Changes Notes
+
+# V1
+
+Init projet only 1 file
+
+# V2
+
+Scan directory
