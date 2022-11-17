@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function jsonValue() {
 KEY=$1
 num=$2
@@ -9,11 +10,12 @@ awk -F"[,:}]" '{for(i=1;i<=NF;i++){if($i~/'$KEY'\042/){print $(i+1)}}}' | tr -d 
 function trapapi() {
 
 curl -H "Content-Type: text/html; charset=utf-8" --data-binary @${1} https://validator.w3.org/nu/?out=json -o $$.json > /dev/null 2>&1
-
-echo "########### START ${1} ###########\n"`cat $$.json | jsonValue message`"\n########### END ${1} ###########\n"
-
+_result=`cat $$.json | jsonValue message | sed 's/$/ \n/'`
+echo "########### START ${1} ###########\n${_result}\n########### END ${1} ###########\n"
 
 }
+
+
 if [ -e "${1}" ]; then
   if [ -d "${1}" ]; then
     for n in `ls -1 ${1}`; do
