@@ -39,7 +39,7 @@ if [ -e "${1}" ]; then
     result=`trapapi ${1}`
   fi
 
-  nb_line=`trapapi "${result}" | wc -l`
+  nb_line=`echo "${result}" | wc -l`
   if [ ${nb_line} -gt 1 ]; then
     echo "result-validator-w3c<<EOF" >> $GITHUB_OUTPUT
     echo "${result}" >> $GITHUB_OUTPUT
