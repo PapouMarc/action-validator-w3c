@@ -10,7 +10,7 @@ awk -F"[,:}]" '{for(i=1;i<=NF;i++){if($i~/'$KEY'\042/){print $(i+1)}}}' | tr -d 
 function trapapi() {
 
 curl -H "Content-Type: text/html; charset=utf-8" --data-binary @${1} https://validator.w3.org/nu/?out=json -o $$.json > /dev/null 2>&1
-_result=`cat $$.json | jsonValue message | sed 's/$/ \n/'`
+_result=`cat $$.json | jsonValue message | sed 's/$/ /'`
 echo "########### START ${1} ###########\n${_result}\n########### END ${1} ###########\n"
 
 }
