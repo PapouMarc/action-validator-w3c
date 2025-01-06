@@ -43,3 +43,7 @@ Init projet only 1 file
 ## V2
 
 Scan directory
+
+## V3
+
+Change checkout worflow
