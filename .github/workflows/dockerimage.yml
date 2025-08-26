@@ -8,6 +8,17 @@ on:
       - '.github/**'
 
 jobs:
+  sonarqube:
+    name: SonarQube
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   build:
     runs-on: ubuntu-latest
     steps:
@@ -17,14 +28,14 @@ jobs:
       id: testAction1
       uses: ./
       with:
-        run-validator-w3c: './test/good_test.html'
+        run-validator-w3c: './test/test.good.html'
     - name: Get the output result good test
       run: echo -e "The result is ${{ steps.testAction1.outputs.result-validator-w3c }}"
     - name: run test bad test
       id: testAction2
       uses: ./
       with:
-        run-validator-w3c: './test/bad_test.html'
+        run-validator-w3c: './test/test.bad.html'
     - name: Get the output result bad test
       run: echo -e "The result is ${{ steps.testAction2.outputs.result-validator-w3c }}"
     - name: run test all file in directory
